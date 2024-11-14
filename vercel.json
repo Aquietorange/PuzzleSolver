@@ -2,11 +2,8 @@
     "version": 2,
     "routes": [
         {
-            "handle": "filesystem"
-        },
-        {
-            "src": "/word/(?<id>[^/]*)",
-            "dest": "/api/word/[id]?id=$id"
+            "src": "/word/(?<id>[^/]+)",
+            "dest": "/api/word?id=$id"
         }
     ]
 }

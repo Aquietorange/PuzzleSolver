@@ -23,6 +23,18 @@ export default async function handler (req, res) {
 
             // 缓存1小时
             await kv.set(cacheKey, html, { ex: 3600 });
+        } else {
+            html = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Word: ${id}</title>
+    </head>
+    <body>
+        <h1>Word: ${id}-2</h1>
+    </body>
+    </html>
+  `;
         }
         res.setHeader('Content-Type', 'text/html');
         return res.status(200).send(html);

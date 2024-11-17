@@ -36,7 +36,7 @@ yarn-error.log*
 next-env.d.ts
 dev
 
-.vscode
+
 .idea
 
 # docker-compose env files
@@ -46,3 +46,4 @@ dev
 *.key.pub
 
 masks.json
+todo.txt

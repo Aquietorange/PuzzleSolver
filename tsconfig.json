@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "ES2015", // 使用更现代的目标版本
+    "lib": [
+      "esnext"
+    ],
+    //"outDir": "./.vercel/output", // 指定输出目录
+    // "outDir": "./dist", // 输出目录，编译后的文件将放在这里
+    "noEmit": true, // 确保这个设置为 false
+    "sourceMap": true, // 生成源码映射文件
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "NodeNext", // 改为 commonjs 可能更适合服务端代码
+    // "moduleResolution": "node",
+    //"allowImportingTsExtensions": true,
+    //"inlineSourceMap": true, // 将源码映射内联到文件中
+    "inlineSources": true, // 将源码内联到源码映射中
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    //"jsx": "preserve", // 如果不需要 React，可以移除
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

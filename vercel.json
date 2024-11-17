@@ -4,6 +4,10 @@
         {
             "src": "/word/(?<id>[^/]+)",
             "dest": "/api/word?id=$id"
+        },
+        {
+            "src": "/",
+            "dest": "/api/index"
         }
     ]
 }

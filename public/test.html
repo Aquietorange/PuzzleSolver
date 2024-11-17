@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>Crossword Puzzle Solver | Free Word Game Helper & Solver Tool</title>
-    <meta name="title" content="Crossword Puzzle Solver | Free Word Game Helper & Solver Tool">
+    <title> | Crossword Puzzle Solver</title>
+    <meta name="title" content="| Crossword Puzzle Solver ">
     <meta name="description"
         content="Get instant solutions for crosswords, word puzzles, and letter games. Our free solver tool helps you find answers, improve skills, and learn new words. Perfect for beginners and experts.">
     <meta name="keywords"
@@ -177,20 +177,6 @@
             background-color: #2980b9;
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
         .content-section {
             background: white;
             padding: 40px;
@@ -357,10 +343,7 @@
     <main class="container" id="main-content">
         <div class="hero-section">
             <div class="container">
-                <h1>Unlock Any Word Puzzle Challenge</h1>
-                <p>Your smart companion for solving crosswords, word games, and letter puzzles. Get instant solutions
-                    and
-                    improve your word game skills!</p>
+                <h1>{{id}}</h1>
             </div>
         </div>
 
@@ -393,99 +376,24 @@
             </form>
         </div>
 
-        <div class="features">
-            <div class="feature-card">
-                <h2>How It Works</h2>
-                <p>Simply enter the number of letters and fill in the known letters. Leave empty spaces for unknown
-                    letters, and we'll help you find the answer!</p>
-            </div>
-
-            <div class="feature-card">
-                <h2>Advanced Search</h2>
-                <p>Our powerful algorithm searches through an extensive dictionary to find all possible matches for your
-                    crossword puzzle.</p>
-            </div>
-
-            <div class="feature-card">
-                <h2>Daily Puzzles</h2>
-                <p>Check back daily for new crossword puzzles and improve your solving skills!</p>
-            </div>
-        </div>
-
         <div class="content-section">
-            <h2>Why Word Games Are Fun and Beneficial</h2>
-            <p>Word games are more than just entertainment - they're a powerful tool for mental fitness and personal
-                growth. Here's why you should make word games part of your daily routine:</p>
-
-            <ul class="benefits-list">
-                <li><strong>Cognitive Enhancement:</strong> Improve memory, problem-solving skills, and mental agility
+            <div class="pattern-display">
+                Pattern: ${wordsjson.pattern}
+            </div>
+            <div class="matches-count">
+                Found ${wordsjson.total_matches} matching word${wordsjson.total_matches !== 1 ? 's' : ''}
+            </div>
+            <ul class="word-list">
+                ${wordsjson.matches.map(match => `
+                <li class="word-item">
+                    <div class="word">${match.word}</div>
+                    <div class="definition">${match.definition}</div>
                 </li>
-                <li><strong>Vocabulary Building:</strong> Expand your word knowledge and language mastery</li>
-                <li><strong>Stress Relief:</strong> Engage in a relaxing yet stimulating mental activity</li>
-                <li><strong>Social Connection:</strong> Share and compete with friends and family</li>
-                <li><strong>Educational Value:</strong> Learn new words and their meanings in an engaging way</li>
-                <li><strong>Brain Health:</strong> Keep your mind sharp and potentially reduce cognitive decline</li>
+                `).join('')}
             </ul>
         </div>
 
-        <div class="content-section">
-            <h2>Word Game Strategy Guide</h2>
 
-            <h3>Basic Techniques</h3>
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <h4>Pattern Recognition</h4>
-                    <p>Look for common letter combinations like 'th', 'ch', 'ing'. These patterns can help you predict
-                        missing letters.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>Vowel Placement</h4>
-                    <p>Every word needs vowels. If you're stuck, try filling in common vowel positions to reveal
-                        possible word structures.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>Word Length Strategy</h4>
-                    <p>Longer words often contain common prefixes (un-, re-, pre-) or suffixes (-ing, -tion, -able).
-                        Start with these!</p>
-                </div>
-            </div>
-
-            <h3>Advanced Strategies</h3>
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <h4>Letter Frequency</h4>
-                    <p>In English, E, T, A, O, I, N are the most common letters. Use this knowledge when guessing
-                        unknown letters.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>Context Clues</h4>
-                    <p>Use surrounding words and clues to narrow down possibilities. The theme of the puzzle can often
-                        point you in the right direction.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>Process of Elimination</h4>
-                    <p>Keep track of letters you've tried and ruled out. Sometimes knowing what's wrong is as helpful as
-                        knowing what's right.</p>
-                </div>
-            </div>
-
-            <h3>Tips for Specific Word Puzzles</h3>
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <h4>Crosswords</h4>
-                    <p>Start with fill-in-the-blank clues as they're usually easier. Cross-reference intersecting words
-                        to confirm letters.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>Word Searches</h4>
-                    <p>Scan for common word endings first. Look for patterns in multiple directions simultaneously.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>Anagrams</h4>
-                    <p>Group common letter combinations first. Try rearranging consonants and vowels separately.</p>
-                </div>
-            </div>
-        </div>
     </main>
 
     <footer>

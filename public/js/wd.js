@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputs = lettersContainer.getElementsByClassName('letter-box');
         return Array.from(inputs)
             .map(input => (input).value.trim() ?
-                (input).value.toUpperCase() : '-')
+                (input).value : '-')
             .join('');
     }
 
